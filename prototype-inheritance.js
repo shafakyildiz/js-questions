@@ -1,16 +1,15 @@
-function User() {
+function User(name) {
+    this.name = name;
     console.log("User class...");
 }
 
 User.prototype.getFullName = function(name) {
-    return "Hello " + name;
+    return "Hello " + this.name;
     
 }
 
+let user = new User("Safak");
+console.log(user.getFullName());
 
-
-let user = new User();
-console.log(user.getFullName("Safak"));
-
-let user2 = new User();
-console.log(user2.getFullName("Oguz"));
+let user2 = new User("Oguz");
+console.log(user2.getFullName());
